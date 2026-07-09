@@ -1,0 +1,26 @@
+:root{
+   --primary:#FF6B00;
+   --secondary:#1A2332;
+   --background:#F8F9FA;
+   --card:#FFFFFF;
+   --success:#10B981;
+}
+body{
+background-color: var(--background);
+
+}
+nav{
+    background-color: var(--secondary);
+    color:var(black) ;
+    border-bottom: 5px solid var(--success);
+    padding: 20px 8px 28px;
+    display: flex;
+    color: var(--card);
+    font-size: 1.3em;
+}
+.logo{
+    color: var(--primary);
+    font-size: 2em;
+    font-weight: 800;
+    margin-right: 5%;
+}
