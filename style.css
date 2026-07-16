@@ -14,7 +14,10 @@ nav{
     color:var(black) ;
     border-bottom: 5px solid var(--success);
     padding: 20px 8px 28px;
+    max-width: auto;
+    overflow: auto;
     display: flex;
+    flex-wrap: wrap;
     color: var(--card);
     font-size: 1.3em;
 }
@@ -23,4 +26,28 @@ nav{
     font-size: 2em;
     font-weight: 800;
     margin-right: 5%;
+}
+.main{
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    width: 100%;
+    
+}
+.bus-detail{
+    width: 30%;
+background-color: var(--card);
+
+}
+.bus-map{
+    width: 70%;
+    background-color: var(--primary);
+    min-height: 520px;
+}
+.note{
+    background-color: var(--success);
+    color: var(--secondary);
+    text-align: center;
+    height: 100px;
+    padding-top: 40px;
 }
