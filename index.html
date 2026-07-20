@@ -5,10 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TrackMYBus</title>
 <link rel="stylesheet" href="style.css">
-            <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-            <script src="javascript.js"></script>
-            <link rel="stylesheet"
-      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+           
+            <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+            <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css">
 </head>
 <body>
 <nav>
@@ -17,7 +16,13 @@
 </nav>
    <main class="main">
     <aside class="bus-detail"><div>
-        <p>This is bus detail </p>
+        <div class="routeBtn active" onclick="loadRoute(0)">
+Route 1
+</div>
+
+<div class="routeBtn" onclick="loadRoute(1)">
+Route 2
+</div>
     </div></aside>
     <section class="bus-map">
         <div id="leafletMap">
@@ -26,5 +31,9 @@
     </section>
    </main>
    <footer class="note">Prototype for a New Road, Kathmandu bus-tracking service</footer>
+           <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
+<script src="javascript.js"></script>
+            <script src="javascript.js"></script>
 </body>
 </html>
