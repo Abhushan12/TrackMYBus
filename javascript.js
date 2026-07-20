@@ -7,7 +7,7 @@ let animation = null;
 // Bus icon
 const busIcon = L.icon({
     iconUrl: "bus.png",
-    iconSize: [40, 40]
+    iconSize: [30, 30]
 });
 
 // Bus routes (stops only)
