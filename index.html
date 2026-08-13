@@ -4,37 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TrackMYBus</title>
-<link rel="stylesheet" href="style.css">
-           
-            <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-            <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css">
+
+    <!-- Leaflet & Styles -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css" />
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<nav>
-   <span class="logo">TrackMyBus</span>
-   <span > Live Bus tracking <br> --Kathamandu Ring road area</span>
-</nav>
-   <main class="main">
-    <aside class="bus-detail"><div class="bd">
-        <div class="routeBtn active" onclick="loadRoute(0)">
-Route 1
-</div>
 
-<div class="routeBtn" onclick="loadRoute(1)">
-Route 2
-</div>
-    </div></aside>
-    <section class="bus-map">
-        <di class="border">
-        <div id="leafletMap">
-        </div>
-        </div>
-    </section>
-   </main>
-   <footer class="note">Prototype for a New Road, Kathmandu bus-tracking service</footer>
-           <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
-<script src="javascript.js"></script>
-            <script src="javascript.js"></script>
+    <nav class="navbar">
+        <span class="logo">TrackMyBus</span>
+        <span class="tagline">Live Bus Tracking <br><small>Kathmandu Ring Road Area</small></span>
+    </nav>
+
+    <main class="main">
+        <aside class="bus-detail">
+            <h3>Select Route</h3>
+            <div class="bd">
+                <button class="routeBtn active" onclick="loadRoute(0)">
+                    <strong>Route 1</strong>
+                    <span>Chabahil - Koteshwor</span>
+                </button>
+
+                <button class="routeBtn" onclick="loadRoute(1)">
+                    <strong>Route 2</strong>
+                    <span>Koteshwor - Balkhu</span>
+                </button>
+            </div>
+        </aside>
+
+        <section class="bus-map">
+            <div id="leafletMap"></div>
+        </section>
+    </main>
+
+    <footer class="note">
+        Prototype for Kathmandu Bus-Tracking Service
+    </footer>
+
+    <!-- Leaflet Scripts -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
+    <script src="javascript.js"></script>
 </body>
 </html>

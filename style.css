@@ -1,81 +1,198 @@
-:root{
-   --primary:#FF6B00;
-   --secondary:#1A2332;
-   --background:#F8F9FA;
-   --card:#FFFFFF;
-   --success:#10B981;
+:root {
+    --primary: #FF6B00;
+    --secondary: #1A2332;
+    --background: #F8F9FA;
+    --card: #FFFFFF;
+    --success: #10B981;
 }
-body{
-background-color: var(--background);
 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-nav{
-    background-color: var(--secondary);
-    color:var(black) ;
-    border-bottom: 5px solid var(--success);
-    padding: 20px 8px 28px;
-    max-width: auto;
-    overflow: auto;
-    display: flex;
-    flex-wrap: wrap;
-    color: var(--card);
-    font-size: 1.3em;
-}
-.logo{
-    color: var(--primary);
-    font-size: 2em;
-    font-weight: 800;
-    margin-right: 5%;
-}
-.main{
-    display: flex;
-    flex-wrap: wrap;
-    overflow-y: auto;
-    width: 100%;
-    
-}
-.bus-detail{
-    width: 30%;
-background-color: var(--card);
 
-}
-.bus-map{
-    width: 70%;
-    background-color: var(--primary);
-    min-height: 520px;
-
-}
-.note{
-    background-color: var(--success);
-    color: var(--secondary);
-    text-align: center;
-    height: 100px;
-    padding-top: 40px;
-}
-#leafletMap {
-       width: 84%;
-    height: 71%;
-    border: 5px solid var(--secondary);
-    padding: 20px;
-    flex: 1;
-    position: relative;
-    border-radius: 14px;
-    overflow: hidden;
-    margin: 50px;
-}
-.bd div{
-border: 2px solid black;
-border-radius: 1px;
-height: 30px;
-
-}
-.bd div {
-    border: 2px solid black;
-    border-radius: 1px;
-    height: 62px;
+body {
+    background-color: var(--background);
     display: flex;
     flex-direction: column;
-    margin: 10px;
-    border-radius: 11px;
-    padding: 3px;
+    min-height: 100vh;
+}
+
+/* Navigation */
+.navbar {
+    background-color: var(--secondary);
+    border-bottom: 5px solid var(--success);
+    padding: 15px 25px;
+    display: flex;
+    align-items: center;
+    color: var(--card);
+}
+
+.logo {
+    color: var(--primary);
+    font-size: 1.8em;
+    font-weight: 800;
+    margin-right: 25px;
+}
+
+.tagline {
+    font-size: 0.9em;
+    line-height: 1.2;
+}
+
+/* Main Layout */
+.main {
+    display: flex;
+    flex: 1;
+    min-height: 550px;
+}
+
+.bus-detail {
+    width: 300px;
+    background-color: var(--card);
+    padding: 20px;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.05);
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.bus-detail h3 {
+    color: var(--secondary);
+}
+
+.bd {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Route Buttons */
+.routeBtn {
+    background: #ffffff;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 12px 15px;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.routeBtn span {
+    font-size: 0.8em;
+    color: #64748b;
+    margin-top: 4px;
+}
+
+.routeBtn:hover {
+    border-color: var(--primary);
+    background-color: #fffaf5;
+}
+
+.routeBtn.active {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: white;
+}
+
+.routeBtn.active span {
+    color: #ffe8d6;
+}
+
+/* Route Timer Card */
+.timer-card {
+    background-color: #F1F5F9;
+    border-radius: 8px;
+    padding: 15px;
+    border: 1px solid #E2E8F0;
+}
+
+.timer-card h4 {
+    color: var(--secondary);
+    font-size: 0.95em;
+    margin-bottom: 10px;
+}
+
+.timer-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85em;
+    margin-top: 6px;
+    color: #475569;
+}
+
+.timer-item .highlight {
+    color: var(--primary);
+    font-size: 1.05em;
+}
+
+/* Map Section */
+.bus-map {
+    flex: 1;
+    position: relative;
+}
+
+#leafletMap {
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+}
+
+/* Footer */
+.note {
+    background-color: var(--secondary);
+    color: #94a3b8;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.85em;
+    border-top: 1px solid #334155;
+}
+
+/* Animated Bus Marker (replaces static bus.png icon) */
+.bus-marker {
+    position: relative;
+    width: 30px;
+    height: 30px;
+}
+
+.bus-marker-pulse {
+    position: absolute;
+    inset: -8px;
+    border-radius: 50%;
+    opacity: 0.45;
+    animation: busPulse 1.8s infinite ease-out;
+}
+
+.bus-marker-core {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #ffffff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+}
+
+@keyframes busPulse {
+    0% { transform: scale(0.5); opacity: 0.55; }
+    100% { transform: scale(2.1); opacity: 0; }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .main {
+        flex-direction: column;
+    }
+    .bus-detail {
+        width: 100%;
+    }
+    #leafletMap {
+        height: 400px;
+    }
 }
